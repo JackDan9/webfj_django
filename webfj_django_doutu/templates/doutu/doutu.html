@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doutu information</title>
+</head>
+<body>
+{% for doutu in doutu_list %}
+title: {{ doutu.title }}
+img_url: {{ doutu.img_url }}
+{% endfor %}
+</body>
+</html>
