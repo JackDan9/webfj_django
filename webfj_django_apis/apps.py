@@ -5,4 +5,4 @@ from django.apps import AppConfig
 
 
 class WebfjDjangoPollsConfig(AppConfig):
-    name = 'webfj_django_polls'
+    name = 'webfj_django_apis'
