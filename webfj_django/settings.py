@@ -142,7 +142,7 @@ DATABASES = {
         # mysql_username
         'USER': 'root',
         # mysql_password
-        'PASSWORD': 'admin',
+        'PASSWORD': '*****',
         # mysql_host(default: localhost)
         'HOST': '',
         # mysql_port(default: 3306)
