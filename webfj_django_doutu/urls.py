@@ -8,6 +8,6 @@ from . import views
 urlpatterns = [
     # url(r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}),
     # url(r'^doutu/', include('webfj_django_doutu.views.list_doutu')),
-    url(r'^$', views.list_doutu, name="list_doutu"),
-    url(r'^home/', views.home, name="home"),
+    url(r'^$', views.index, name="index"),
+    # url(r'^home/', views.home, name="home"),
 ]

@@ -7,7 +7,6 @@ import AreaStack from './components/echarts/areastack.es6'
 import UserMgt from './components/antd/usermgt.es6'
 import HeatmapCartesian from './components/echarts/heatmapcartesian.es6'
 
-
 ReactDOM.render((
     <Router history={hashHistory}>
         <Route path="/" component={Index}>

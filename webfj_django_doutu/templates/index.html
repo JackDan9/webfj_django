@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>feng jun doutu</title>
-</head>
-<body>
-    <div id="main"></div>
-    <script src="../../static/js/build/vendors.js"></script>
-    <script src="../../static/js/build/index.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>feng jun doutu</title>
+        {% load staticfiles %}
+    </head>
+    <body>
+        <div id="main"></div>
+        <!--<script src="../../static/js/build/vendors.js"></script>-->
+        <!--<script src="../../static/js/build/index.js"></script>-->
+        <script src="{% static "js/build/vendors.js" %}"></script>
+        <script src="{% static "js/build/index.js" %}"></script>
+    </body>
 </html>
