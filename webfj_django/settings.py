@@ -40,17 +40,71 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # insert new apps
     'webfj_django_doutu',
+    # restful api
+    'rest_framework',
+    # rest swagger
+    'rest_framework_swagger',
+    # cors headers
+    'corsheaders',
 ]
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # cors headers middleware
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = (
+    '*',
+)
+
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+    'VIEW',
+)
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOW_HEADERS = (
+    'accept',
+    'XMLHttpRequest',
+    'X_FILENAME',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+    'Pragma',
+    'X-Custom-Header',
+)
+
+
 
 ROOT_URLCONF = 'webfj_django.urls'
 
@@ -88,7 +142,7 @@ DATABASES = {
         # mysql_username
         'USER': 'root',
         # mysql_password
-        'PASSWORD': '*****',
+        'PASSWORD': 'admin',
         # mysql_host(default: localhost)
         'HOST': '',
         # mysql_port(default: 3306)
@@ -96,6 +150,8 @@ DATABASES = {
     }
 }
 
+# Mode User By JackDan9
+AUTH_USER_MODEL = "webfj_django_doutu.NewUser"
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -134,3 +190,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Add Static Root
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
