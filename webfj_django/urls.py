@@ -16,12 +16,17 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import include
+from webfj_django_doutu import urls as webfj_django_doutu_usls
+from webfj_django_doutu import views
 # from django.urls import path
 # from . import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^polls/', include('webfj_django_polls.urls')),
+    url(r'^index/rest_api/', include('webfj_django_apis.rest_api.urls')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     # url(r'doutu/',views.)
     url(r'^doutu/', include('webfj_django_doutu.urls')),
+    url(r'^$', views.index, name='index'),
+    url(r'^table_list/', include('webfj_django_apis.urls')),
     # url(r'^doutu/', include('webfj_django_doutu.views.list_doutu')),
 ]
