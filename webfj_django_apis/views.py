@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from __future__ import unicode_literals
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
@@ -7,6 +8,8 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from webfj_django_apis.models import Table
 from webfj_django_apis.serializers import TableSerializer
+
+# Create your views here.
 
 @csrf_exempt
 def table_list(request):
@@ -60,8 +63,3 @@ def table_detail(request, pk):
 # def index(request):
 #     return HttpResponse("Hello, world. You're at the polls index.")
 
-
-
-
-
-# Create your views here.
