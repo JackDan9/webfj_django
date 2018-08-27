@@ -12,6 +12,9 @@ from django.views.decorators.cache import cache_page
 
 import urlparse
 
+def login(request):
+    return render(request, '/')
+
 def register(request):
     redirect_to = request.POST.get('next', request.GET.get('next', ''))
 
