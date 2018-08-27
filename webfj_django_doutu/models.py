@@ -17,6 +17,10 @@ class TableManager(models.Manager):
 @python_2_unicode_compatible
 class NewUser(AbstractUser):
     profile = models.CharField('profile', default='', max_length=256)
+    gender = models.CharField(max_length=5, choices=(('man', '男'), ('woman', '女')))
+
+    class Meta(AbstractUser.Meta):
+        pass
 
     def __str__(self):
         return self.username

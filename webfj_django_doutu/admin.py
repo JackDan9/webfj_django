@@ -10,6 +10,7 @@ from .models import Table, NewUser
 # @admin.register(Table)
 class TableAdmin(admin.ModelAdmin):
     list_display = ('title', 'img_url')
+    
 # @admin.register
 class NewUserAdmin(admin.ModelAdmin):
     list_display = ('username', 'date_joined', 'profile')
